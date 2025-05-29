@@ -13,6 +13,8 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.example.sanwichapp_gui.Classes.Inventory;
 import org.example.sanwichapp_gui.Classes.Order;
+import org.example.sanwichapp_gui.Components.CheckOut.Checkout;
+import org.example.sanwichapp_gui.Components.ChipsUI;
 import org.example.sanwichapp_gui.Components.DrinkUI;
 import org.example.sanwichapp_gui.Components.SandwichUI;
 import org.example.sanwichapp_gui.StageManager;
@@ -40,7 +42,6 @@ public class HomePage {
         //Cart Button//
         Button checkoutBtn = new Button("🛒 " + order.getTotalItemCount());
         checkoutBtn.setStyle("-fx-font-size: 16px; -fx-text-fill: black; -fx-background-color: transparent;");
-        checkoutBtn.setDisable(order.isEmpty());
 
 
         //Creating layout container for the  addsanwich button etcc//
@@ -75,20 +76,18 @@ public class HomePage {
         addDrinksBtn.setOnAction(e -> {
             customizerContainer.getChildren().clear();
             DrinkUI drinkUI = new DrinkUI();
-            Inventory inventory = Inventory.loadFromFile("inventory.json");
             drinkUI.render(customizerContainer);
             customizerContainer.setVisible(true);
             customizerContainer.setManaged(true);
         });
-//
-//        addChipsBtn.setOnAction(e -> {
-//            customizerContainer.getChildren().clear();
-//            ChipsUI chipsUI = new ChipsUI();
-//            Inventory inventory = Inventory.loadFromFile("inventory.json");
-//            chipsUI.render(customizerContainer, inventory, order, checkoutBtn);
-//            customizerContainer.setVisible(true);
-//            customizerContainer.setManaged(true);
-//        });
+
+        addChipsBtn.setOnAction(e -> {
+            customizerContainer.getChildren().clear();
+            ChipsUI chipsUI = new ChipsUI();
+            chipsUI.render(customizerContainer);
+            customizerContainer.setVisible(true);
+            customizerContainer.setManaged(true);
+        });
 
 //        signatureBtn.setOnAction(e -> {
 //            customizerContainer.getChildren().clear();
@@ -108,11 +107,9 @@ public class HomePage {
                 return;
             }
 
-            Inventory inventory = Inventory.loadFromFile("inventory.json");
-
             Stage checkoutStage = new Stage();
-//            Checkout checkoutPage = new Checkout(checkoutStage, order, inventory);
-//            checkoutPage.show();
+            Checkout checkoutPage = new Checkout(checkoutStage);
+            checkoutPage.show();
         });
 
 
@@ -159,6 +156,4 @@ public class HomePage {
         imageView.setFitHeight(height);
         return imageView;
     }
-
-
 }

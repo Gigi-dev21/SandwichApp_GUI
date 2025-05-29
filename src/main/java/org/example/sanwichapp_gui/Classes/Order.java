@@ -13,6 +13,7 @@ public class Order {
     private List<Drink> drinks;
     private List<Chips> chips;
     private double tax=0.07;
+    private boolean signedIn;
 
 
 
@@ -22,6 +23,10 @@ public class Order {
         this.chips = new ArrayList<>();
     }
 
+
+    public boolean isSignedIn() {
+        return customerName != null && !customerName.trim().isEmpty();
+    }
     // Add sandwich
     public void addSandwich(Sandwich sandwich) {
         sandwiches.add(sandwich);
