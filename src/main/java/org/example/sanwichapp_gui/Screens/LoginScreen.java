@@ -1,4 +1,4 @@
-package org.example.sanwichapp_gui;
+package org.example.sanwichapp_gui.Screens;
 
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -8,6 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import org.example.sanwichapp_gui.StageManager;
 
 public class LoginScreen {
 
@@ -35,7 +36,8 @@ public class LoginScreen {
             if (name.isEmpty()) {
                 errorLabel.setText("Name cannot be empty.");
             } else {
-
+                HomePage homePage = new HomePage();
+                homePage.show();
             }
         });
 

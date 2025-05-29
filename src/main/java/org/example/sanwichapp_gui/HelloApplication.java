@@ -1,9 +1,8 @@
 package org.example.sanwichapp_gui;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.example.sanwichapp_gui.Screens.LoginScreen;
 
 import java.io.IOException;
 
