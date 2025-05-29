@@ -5,7 +5,6 @@ import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 import org.example.sanwichapp_gui.Classes.Inventory;
 import org.example.sanwichapp_gui.Classes.Order;
 import org.example.sanwichapp_gui.Classes.Sandwich;
@@ -92,7 +91,7 @@ public class SandwichUI {
         });
 
 
-        // Add Sandwich Button//
+        // Add Sandwich Button/
         Button submitBtn = new Button("Add Sandwich to Order");
         submitBtn.setStyle("-fx-padding: 8 16 8 16; -fx-margin-left: 80px;");
 

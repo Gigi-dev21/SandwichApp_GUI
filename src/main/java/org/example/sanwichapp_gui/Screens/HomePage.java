@@ -2,6 +2,7 @@ package org.example.sanwichapp_gui.Screens;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -17,18 +18,18 @@ import org.example.sanwichapp_gui.Components.CheckOut.Checkout;
 import org.example.sanwichapp_gui.Components.ChipsUI;
 import org.example.sanwichapp_gui.Components.DrinkUI;
 import org.example.sanwichapp_gui.Components.SandwichUI;
+//import org.example.sanwichapp_gui.Components.SignatureSandwich.SignatureSandwichUI;
 import org.example.sanwichapp_gui.StageManager;
 
 
 public class HomePage {
     Stage stage = StageManager.getStage();
-    Order order= StageManager.getOrder();
-    private String userName=order.getCustomerName();
+    Order order = StageManager.getOrder();
+    private String userName = order.getCustomerName();
 
 
     // Container for sandwich customizer UI
     private VBox customizerContainer = new VBox(10);
-
 
 
     public void show() {
@@ -43,7 +44,6 @@ public class HomePage {
         Button checkoutBtn = new Button("🛒 " + order.getTotalItemCount());
         checkoutBtn.textProperty().bind(order.totalItemCountProperty().asString("🛒 %d"));
         checkoutBtn.setStyle("-fx-font-size: 16px; -fx-text-fill: black; -fx-background-color: transparent;");
-
 
 
         //Creating layout container for the  addsanwich button etcc//
@@ -92,15 +92,21 @@ public class HomePage {
         });
 
 //        signatureBtn.setOnAction(e -> {
+//
 //            customizerContainer.getChildren().clear();
-//            SignatureSandwichSelectionUI signatureSandwichSelectionUI= new SandwichCustomizerUI();
-//            Inventory inventory = Inventory.loadFromFile("inventory.json");
-//            signatureSandwichSelectionUI.re
-////            SignatureSandwichSelectionUI selectionUI = new SignatureSandwichSelectionUI(stage, inventory, order);
-////            selectionUI.show();
+//
+//
+//            // Create and show signature sandwich selection screen
+//            SignatureSandwichUI selectionUI = new SignatureSandwichUI( );
+//            Node selectionNode = selectionUI.getUI(); // Custom method to return built Node/Pane
+//
+//            customizerContainer.getChildren().add(selectionNode);
 //            customizerContainer.setVisible(true);
 //            customizerContainer.setManaged(true);
+//
+//
 //        });
+
 
         checkoutBtn.setOnAction(e -> {
             if (order.isEmpty()) {

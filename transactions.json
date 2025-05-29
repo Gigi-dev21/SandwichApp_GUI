@@ -90,4 +90,35 @@
   "totalAmount" : 2.675,
   "paymentMethod" : "Credit Card",
   "timestamp" : 1748521184695
+}, {
+  "customerName" : "Hello",
+  "order" : {
+    "customerName" : "Hello",
+    "sandwiches" : [ {
+      "name" : "Steak Sandwich",
+      "size" : "8",
+      "bread" : "white",
+      "meat" : "Steak",
+      "cheese" : "american",
+      "toppings" : [ "lettuce" ],
+      "sauces" : [ "mayo" ],
+      "sides" : [ "sauce" ],
+      "toasted" : false,
+      "quantity" : 1
+    } ],
+    "drinks" : [ {
+      "name" : "Sprite",
+      "price" : 2.5,
+      "quantity" : 1,
+      "size" : "Medium",
+      "totalPrice" : 2.5
+    } ],
+    "chips" : [ ],
+    "tax" : 0.07,
+    "empty" : false,
+    "signedIn" : true
+  },
+  "totalAmount" : 13.91,
+  "paymentMethod" : "Credit Card",
+  "timestamp" : 1748546220346
 } ]
