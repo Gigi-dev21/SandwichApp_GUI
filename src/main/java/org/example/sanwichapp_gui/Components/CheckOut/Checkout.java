@@ -9,8 +9,11 @@ import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import org.example.sanwichapp_gui.Classes.*;
+import org.example.sanwichapp_gui.Controllers.SaveToFile;
 import org.example.sanwichapp_gui.Screens.LoginScreen;
 import org.example.sanwichapp_gui.StageManager;
+
+import java.time.Instant;
 
 
 public class Checkout {
@@ -187,6 +190,13 @@ public class Checkout {
 
         layout.getChildren().addAll(subtotalLabel, taxLabel, totalLabel);
 
+        Transaction transaction = new Transaction(
+                order.getCustomerName(),
+                order,
+                total,
+                "Credit Card",
+                Instant.now().toEpochMilli()
+        );
         // Confirm Button
         Button confirmBtn = new Button("Confirm Order");
         confirmBtn.setStyle("-fx-background-color: #2a7a2a; -fx-text-fill: white; -fx-font-weight: bold;");
@@ -196,11 +206,15 @@ public class Checkout {
 
             if (success) {
                 System.out.println("🎉 Payment succeeded! Thank you for your order.");
-                order.clear();
 
                 Stage thisStage = (Stage) confirmBtn.getScene().getWindow();
                 thisStage.close();
 
+                //Save to File
+                SaveToFile saveToFile= new SaveToFile();
+                saveToFile.saveTransactionAsJson(transaction);
+
+                order.clear();
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Order Confirmation");
                 alert.setHeaderText("Thank You!");

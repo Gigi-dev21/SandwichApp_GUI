@@ -1,0 +1,38 @@
+[ {
+  "customerName" : "Gigi",
+  "order" : {
+    "customerName" : "Gigi",
+    "sandwiches" : [ {
+      "name" : "Salami Sandwich",
+      "size" : "8",
+      "bread" : "wheat",
+      "meat" : "Salami",
+      "cheese" : "american",
+      "toppings" : [ "peppers" ],
+      "sauces" : [ "mustard" ],
+      "sides" : [ "sauce" ],
+      "toasted" : true,
+      "quantity" : 1
+    } ],
+    "drinks" : [ {
+      "name" : "Coke",
+      "price" : 2.5,
+      "quantity" : 1,
+      "size" : "Medium",
+      "totalPrice" : 2.5
+    } ],
+    "chips" : [ {
+      "name" : "ruffles",
+      "price" : 1.5,
+      "quantity" : 1,
+      "totalPrice" : 1.5
+    } ],
+    "tax" : 0.07,
+    "empty" : false,
+    "totalItemCount" : 3,
+    "signedIn" : true
+  },
+  "totalAmount" : 15.515,
+  "paymentMethod" : "Credit Card",
+  "timestamp" : 1748520285837
+} ]
