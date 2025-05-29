@@ -2,6 +2,10 @@ package org.example.sanwichapp_gui.Classes;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,40 +13,54 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Order {
     private String customerName;
-    private List<Sandwich> sandwiches;
-    private List<Drink> drinks;
-    private List<Chips> chips;
-    private double tax=0.07;
 
+    // Use regular ArrayLists here to avoid serialization issues
+    private List<Sandwich> sandwiches = new ArrayList<>();
+    private List<Drink> drinks = new ArrayList<>();
+    private List<Chips> chips = new ArrayList<>();
 
+    private double tax = 0.07;
 
+    // This property is for UI only, ignore it in serialization
+    @JsonIgnore
+    private transient IntegerProperty totalItemCount = new SimpleIntegerProperty(0);
 
     public Order() {
+        // Initialize lists
         this.sandwiches = new ArrayList<>();
         this.drinks = new ArrayList<>();
         this.chips = new ArrayList<>();
-    }
 
+        // Initialize totalItemCount property
+        this.totalItemCount = new SimpleIntegerProperty(0);
+
+        // You can update total count manually after loading from JSON
+        updateTotalCount();
+    }
 
     public boolean isSignedIn() {
         return customerName != null && !customerName.trim().isEmpty();
     }
+
     // Add sandwich
     public void addSandwich(Sandwich sandwich) {
         sandwiches.add(sandwich);
+        updateTotalCount();
     }
 
     // Add drink
     public void addDrink(Drink drink) {
         drinks.add(drink);
+        updateTotalCount();
     }
 
     // Add chips
     public void addChips(Chips chip) {
         chips.add(chip);
+        updateTotalCount();
     }
 
-    // Getters
+    // Getters and setters for lists
     public List<Sandwich> getSandwiches() {
         return sandwiches;
     }
@@ -63,14 +81,28 @@ public class Order {
         return customerName;
     }
 
-    public int getTotalItemCount() {
-        int totalCount = 0;
-        totalCount += this.sandwiches.stream().mapToInt(s -> s.getQuantity()).sum();
-        totalCount += this.drinks.stream().mapToInt(d -> d.getQuantity()).sum();
-        totalCount += this.chips.stream().mapToInt(c -> c.getQuantity()).sum();
-        return totalCount;
+    // IntegerProperty for total item count (UI binding only)
+    @JsonIgnore
+    public IntegerProperty totalItemCountProperty() {
+        if (totalItemCount == null) {
+            totalItemCount = new SimpleIntegerProperty(0);
+            updateTotalCount();
+        }
+        return totalItemCount;
     }
 
+    @JsonIgnore
+    public int getTotalItemCount() {
+        return totalItemCountProperty().get();
+    }
+
+    // Update the total count based on the items and quantities
+    public void updateTotalCount() {
+        int totalCount = sandwiches.stream().mapToInt(Sandwich::getQuantity).sum()
+                + drinks.stream().mapToInt(Drink::getQuantity).sum()
+                + chips.stream().mapToInt(Chips::getQuantity).sum();
+        totalItemCountProperty().set(totalCount);
+    }
 
     @JsonIgnore
     public double getTotalOfAllDrinkPrice() {
@@ -107,13 +139,14 @@ public class Order {
         drinks.clear();
         chips.clear();
         customerName = null;
+        updateTotalCount();
     }
-
 
     @Override
     public String toString() {
         return "Order{" +
-                "sandwiches=" + sandwiches +
+                "customerName='" + customerName + '\'' +
+                ", sandwiches=" + sandwiches +
                 ", drinks=" + drinks +
                 ", chips=" + chips +
                 '}';
@@ -126,5 +159,4 @@ public class Order {
     public boolean isEmpty() {
         return sandwiches.isEmpty() && drinks.isEmpty() && chips.isEmpty();
     }
-
 }

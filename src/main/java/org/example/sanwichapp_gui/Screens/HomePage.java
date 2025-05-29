@@ -41,7 +41,9 @@ public class HomePage {
 
         //Cart Button//
         Button checkoutBtn = new Button("🛒 " + order.getTotalItemCount());
+        checkoutBtn.textProperty().bind(order.totalItemCountProperty().asString("🛒 %d"));
         checkoutBtn.setStyle("-fx-font-size: 16px; -fx-text-fill: black; -fx-background-color: transparent;");
+
 
 
         //Creating layout container for the  addsanwich button etcc//
@@ -106,7 +108,6 @@ public class HomePage {
                 alert.showAndWait();
                 return;
             }
-
             Stage checkoutStage = new Stage();
             Checkout checkoutPage = new Checkout(checkoutStage);
             checkoutPage.show();

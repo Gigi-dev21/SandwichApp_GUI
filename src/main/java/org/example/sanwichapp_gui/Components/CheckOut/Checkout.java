@@ -71,6 +71,7 @@ public class Checkout {
                 int indexToRemove = i;
                 deleteBtn.setOnAction(e -> {
                     order.getSandwiches().remove(indexToRemove);
+                    order.updateTotalCount();
                     show();
                 });
 
@@ -127,6 +128,7 @@ public class Checkout {
                 int indexToRemove = i;
                 deleteBtn.setOnAction(e -> {
                     order.getDrinks().remove(indexToRemove);
+                    order.updateTotalCount();
                     show();
                 });
 
@@ -162,6 +164,7 @@ public class Checkout {
                 int indexToRemove = i;
                 deleteBtn.setOnAction(e -> {
                     order.getChips().remove(indexToRemove);
+                    order.updateTotalCount();
                     show();
                 });
 

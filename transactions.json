@@ -29,10 +29,65 @@
     } ],
     "tax" : 0.07,
     "empty" : false,
-    "totalItemCount" : 3,
     "signedIn" : true
   },
   "totalAmount" : 15.515,
   "paymentMethod" : "Credit Card",
   "timestamp" : 1748520285837
+}, {
+  "customerName" : "Dadu",
+  "order" : {
+    "customerName" : "Dadu",
+    "sandwiches" : [ {
+      "name" : "Salami Sandwich",
+      "size" : "8",
+      "bread" : "white",
+      "meat" : "Salami",
+      "cheese" : "american",
+      "toppings" : [ "tomatoes" ],
+      "sauces" : [ "mustard" ],
+      "sides" : [ "au jus" ],
+      "toasted" : false,
+      "quantity" : 1
+    } ],
+    "drinks" : [ {
+      "name" : "Coke",
+      "price" : 2.5,
+      "quantity" : 1,
+      "size" : "Medium",
+      "totalPrice" : 2.5
+    } ],
+    "chips" : [ {
+      "name" : "cheetos",
+      "price" : 1.5,
+      "quantity" : 1,
+      "totalPrice" : 1.5
+    } ],
+    "tax" : 0.07,
+    "empty" : false,
+    "signedIn" : true
+  },
+  "totalAmount" : 15.515,
+  "paymentMethod" : "Credit Card",
+  "timestamp" : 1748520432839
+}, {
+  "customerName" : "2",
+  "order" : {
+    "customerName" : "2",
+    "sandwiches" : [ ],
+    "drinks" : [ {
+      "name" : "Coke",
+      "price" : 2.5,
+      "quantity" : 1,
+      "size" : "Medium",
+      "totalPrice" : 2.5
+    } ],
+    "chips" : [ ],
+    "tax" : 0.07,
+    "empty" : false,
+    "signedIn" : true
+  },
+  "totalAmount" : 2.675,
+  "paymentMethod" : "Credit Card",
+  "timestamp" : 1748521184695
 } ]
