@@ -15,4 +15,5 @@ module org.example.sanwichapp_gui {
     exports org.example.sanwichapp_gui;
     exports org.example.sanwichapp_gui.Screens;
     opens org.example.sanwichapp_gui.Screens to javafx.fxml;
+    opens org.example.sanwichapp_gui.Classes to com.fasterxml.jackson.databind;
 }

@@ -1,0 +1,172 @@
+{
+  "bread": {
+    "white": {
+      "4": 5.50,
+      "8": 7.00,
+      "12": 8.50
+    },
+    "wheat": {
+      "4": 5.50,
+      "8": 7.00,
+      "12": 8.50
+    },
+    "rye": {
+      "4": 5.50,
+      "8": 7.00,
+      "12": 8.50
+    },
+    "wrap": {
+      "4": 5.50,
+      "8": 7.00,
+      "12": 8.50
+    }
+  },
+  "meat": {
+    "Steak": {
+      "4": 1.00,
+      "8": 2.00,
+      "12": 3.00
+    },
+    "Ham": {
+      "4": 1.00,
+      "8": 2.00,
+      "12": 3.00
+    },
+    "Salami": {
+      "4": 1.00,
+      "8": 2.00,
+      "12": 3.00
+    },
+    "Roast beef": {
+      "4": 1.00,
+      "8": 2.00,
+      "12": 3.00
+    },
+    "Chicken": {
+      "4": 1.00,
+      "8": 2.00,
+      "12": 3.00
+    },
+    "Bacon": {
+      "4": 1.00,
+      "8": 2.00,
+      "12": 3.00
+    },
+    "Extra meat": {
+      "4": 0.50,
+      "8": 1.00,
+      "12": 1.50
+    }
+  },
+  "cheese": {
+    "american": {
+      "4": 0.75,
+      "8": 1.50,
+      "12": 2.25
+    },
+    "provolone": {
+      "4": 0.75,
+      "8": 1.50,
+      "12": 2.25
+    },
+    "cheddar": {
+      "4": 0.75,
+      "8": 1.50,
+      "12": 2.25
+    },
+    "swiss": {
+      "4": 0.75,
+      "8": 1.50,
+      "12": 2.25
+    },
+    "extra cheese": {
+      "4": 0.30,
+      "8": 0.60,
+      "12": 0.90
+    }
+  },
+  "regular_toppings": {
+    "lettuce": "Included",
+    "peppers": "Included",
+    "onions": "Included",
+    "tomatoes": "Included",
+    "cucumbers": "Included",
+    "pickles": "Included",
+    "guacamole": "Included",
+    "mushrooms": "Included"
+  },
+  "sides": {
+    "au jus": "Included",
+    "sauce": "Included"
+  },
+  "sauces": {
+    "mayo": "Included",
+    "mustard": "Included",
+    "ketchup": "Included",
+    "thousand islands": "Included",
+    "vinaigrette": "Included"
+  },
+  "drinks": {
+    "coke": {
+      "small": 2.00,
+      "medium": 2.50,
+      "large": 3.00
+    },
+    "sprite": {
+      "small": 2.00,
+      "medium": 2.50,
+      "large": 3.00
+    },
+    "fanta": {
+      "small": 2.00,
+      "medium": 2.50,
+      "large": 3.00
+    },
+    "iced_tea": {
+      "small": 2.00,
+      "medium": 2.50,
+      "large": 3.00
+    }
+  },
+  "chips": {
+    "lays": 1.50,
+    "doritos": 1.50,
+    "ruffles": 1.50,
+    "cheetos": 1.50
+  },
+  "signature_sandwiches": {
+    "BLT": {
+      "size": "8",
+      "bread": "white",
+      "meat": "bacon",
+      "extraMeat": false,
+      "cheese": "cheddar",
+      "extraCheese": false,
+      "toppings": [
+        "lettuce",
+        "tomatoes"
+      ],
+      "sauces": [
+        "vinaigrette"
+      ],
+      "sides": [],
+      "toasted": true
+    },
+    "Philly Cheese Steak": {
+      "size": "8",
+      "bread": "white",
+      "meat": "steak",
+      "extraMeat": false,
+      "cheese": "american",
+      "extraCheese": false,
+      "toppings": [
+        "peppers"
+      ],
+      "sauces": [
+        "mayo"
+      ],
+      "sides": [],
+      "toasted": true
+    }
+  }
+}

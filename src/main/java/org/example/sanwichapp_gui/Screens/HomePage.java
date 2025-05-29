@@ -13,25 +13,20 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.example.sanwichapp_gui.Classes.Inventory;
 import org.example.sanwichapp_gui.Classes.Order;
-import org.example.sanwichapp_gui.Components.ButtonsPane;
-import org.example.sanwichapp_gui.Components.TopBar;
+import org.example.sanwichapp_gui.Components.SandwichUI;
 import org.example.sanwichapp_gui.StageManager;
 
 
 public class HomePage {
-
-    private Stage stage;
-    private String userName;
-    private Order order = new Order();
+    Stage stage = StageManager.getStage();
+    Order order= StageManager.getOrder();
+    private String userName=order.getCustomerName();
 
 
     // Container for sandwich customizer UI
     private VBox customizerContainer = new VBox(10);
 
-    public HomePage(Stage stage, String userName) {
-        this.stage = stage;
-        this.userName = userName;
-    }
+
 
     public void show() {
         //Welcome Sign///
@@ -70,29 +65,29 @@ public class HomePage {
 
         addSandwichBtn.setOnAction(e -> {
             customizerContainer.getChildren().clear();
-            SandwichCustomizerUI customizer = new SandwichCustomizerUI(stage, userName, "inventory.json");
-            customizer.render(customizerContainer, order, checkoutBtn);
+            SandwichUI customizer = new SandwichUI();
+            customizer.render(customizerContainer, checkoutBtn);
             customizerContainer.setVisible(true);
             customizerContainer.setManaged(true);
         });
 
-        addDrinksBtn.setOnAction(e -> {
-            customizerContainer.getChildren().clear();
-            DrinkUI drinkUI = new DrinkUI();
-            Inventory inventory = Inventory.loadFromFile("inventory.json");
-            drinkUI.render(customizerContainer, inventory, order, checkoutBtn);
-            customizerContainer.setVisible(true);
-            customizerContainer.setManaged(true);
-        });
-
-        addChipsBtn.setOnAction(e -> {
-            customizerContainer.getChildren().clear();
-            ChipsUI chipsUI = new ChipsUI();
-            Inventory inventory = Inventory.loadFromFile("inventory.json");
-            chipsUI.render(customizerContainer, inventory, order, checkoutBtn);
-            customizerContainer.setVisible(true);
-            customizerContainer.setManaged(true);
-        });
+//        addDrinksBtn.setOnAction(e -> {
+//            customizerContainer.getChildren().clear();
+//            DrinkUI drinkUI = new DrinkUI();
+//            Inventory inventory = Inventory.loadFromFile("inventory.json");
+//            drinkUI.render(customizerContainer, inventory, order, checkoutBtn);
+//            customizerContainer.setVisible(true);
+//            customizerContainer.setManaged(true);
+//        });
+//
+//        addChipsBtn.setOnAction(e -> {
+//            customizerContainer.getChildren().clear();
+//            ChipsUI chipsUI = new ChipsUI();
+//            Inventory inventory = Inventory.loadFromFile("inventory.json");
+//            chipsUI.render(customizerContainer, inventory, order, checkoutBtn);
+//            customizerContainer.setVisible(true);
+//            customizerContainer.setManaged(true);
+//        });
 
 //        signatureBtn.setOnAction(e -> {
 //            customizerContainer.getChildren().clear();
@@ -115,8 +110,8 @@ public class HomePage {
             Inventory inventory = Inventory.loadFromFile("inventory.json");
 
             Stage checkoutStage = new Stage();
-            Checkout checkoutPage = new Checkout(checkoutStage, order, inventory);
-            checkoutPage.show();
+//            Checkout checkoutPage = new Checkout(checkoutStage, order, inventory);
+//            checkoutPage.show();
         });
 
 

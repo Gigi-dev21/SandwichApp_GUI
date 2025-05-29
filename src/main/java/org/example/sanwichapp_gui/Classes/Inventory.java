@@ -19,6 +19,8 @@ public class Inventory {
     public Map<String, String> sides;
     public Map<String, SignatureSandwich> signature_sandwiches;
 
+    public Inventory() {
+    }
     public static Inventory loadFromFile(String filePath) {
         try {
             ObjectMapper mapper = new ObjectMapper();

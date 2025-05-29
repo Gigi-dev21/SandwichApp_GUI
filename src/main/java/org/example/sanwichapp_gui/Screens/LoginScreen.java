@@ -8,12 +8,14 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import org.example.sanwichapp_gui.Classes.Order;
 import org.example.sanwichapp_gui.StageManager;
 
 public class LoginScreen {
 
     public void show() {
         Stage stage = StageManager.getStage();
+        Order order= StageManager.getOrder();
 
         // Welcome title//
         Label title = new Label("Welcome to Delicious Sandwich!");
@@ -31,8 +33,10 @@ public class LoginScreen {
 
         //Submit button for name//
         Button submitButton = new Button("Submit");
+
         submitButton.setOnAction(e -> {
             String name = nameField.getText().trim();
+            order.setCustomerName(name);
             if (name.isEmpty()) {
                 errorLabel.setText("Name cannot be empty.");
             } else {
