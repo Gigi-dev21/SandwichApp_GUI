@@ -13,6 +13,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.example.sanwichapp_gui.Classes.Inventory;
 import org.example.sanwichapp_gui.Classes.Order;
+import org.example.sanwichapp_gui.Components.DrinkUI;
 import org.example.sanwichapp_gui.Components.SandwichUI;
 import org.example.sanwichapp_gui.StageManager;
 
@@ -66,19 +67,19 @@ public class HomePage {
         addSandwichBtn.setOnAction(e -> {
             customizerContainer.getChildren().clear();
             SandwichUI customizer = new SandwichUI();
-            customizer.render(customizerContainer, checkoutBtn);
+            customizer.render(customizerContainer);
             customizerContainer.setVisible(true);
             customizerContainer.setManaged(true);
         });
 
-//        addDrinksBtn.setOnAction(e -> {
-//            customizerContainer.getChildren().clear();
-//            DrinkUI drinkUI = new DrinkUI();
-//            Inventory inventory = Inventory.loadFromFile("inventory.json");
-//            drinkUI.render(customizerContainer, inventory, order, checkoutBtn);
-//            customizerContainer.setVisible(true);
-//            customizerContainer.setManaged(true);
-//        });
+        addDrinksBtn.setOnAction(e -> {
+            customizerContainer.getChildren().clear();
+            DrinkUI drinkUI = new DrinkUI();
+            Inventory inventory = Inventory.loadFromFile("inventory.json");
+            drinkUI.render(customizerContainer);
+            customizerContainer.setVisible(true);
+            customizerContainer.setManaged(true);
+        });
 //
 //        addChipsBtn.setOnAction(e -> {
 //            customizerContainer.getChildren().clear();

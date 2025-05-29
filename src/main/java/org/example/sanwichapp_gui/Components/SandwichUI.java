@@ -27,7 +27,7 @@ public class SandwichUI {
     private VBox breadBox, meatBox, cheeseBox;
 
 
-    public void render(VBox container, Button checkoutBtn) {
+    public void render(VBox container) {
         container.getChildren().clear();
 
         if (inventory == null) {
@@ -122,9 +122,9 @@ public class SandwichUI {
 
             // Add to selectedItems (cast it if needed)
             order.addSandwich(sandwich);
-            updateCheckoutButton(checkoutBtn, order);
+//            updateCheckoutButton(checkoutBtn, order);
 
-            checkoutBtn.setDisable(false);
+//            checkoutBtn.setDisable(false);
             System.out.println("Added to order: " + sandwich);
             container.getChildren().clear();
         });
