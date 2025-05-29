@@ -1,5 +1,6 @@
 package org.example.sanwichapp_gui.Components;
 
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
@@ -34,8 +35,8 @@ public class SandwichUI {
             return;
         }
 
-        Label header = new Label("Customize your sandwich, " + order.getCustomerName()+ "!");
-        header.setStyle("-fx-font-size: 22px; -fx-padding: 10px;");
+        Label header = new Label("Customize your sandwich, " + order.getCustomerName() + "!");
+        header.setStyle("-fx-font-size: 22px; -fx-font-weight: bold;");
 
         // Size selection
         HBox sizeBox = new HBox(10);
@@ -91,8 +92,10 @@ public class SandwichUI {
         });
 
 
-        // Submit Button
+        // Add Sandwich Button//
         Button submitBtn = new Button("Add Sandwich to Order");
+        submitBtn.setStyle("-fx-padding: 8 16 8 16; -fx-margin-left: 80px;");
+
         submitBtn.setOnAction(e -> {
             String size = sizeCombo.getValue();
             String bread = (String) breadGroup.getSelectedToggle().getUserData();
@@ -126,19 +129,37 @@ public class SandwichUI {
             container.getChildren().clear();
         });
 
-
-        container.getChildren().addAll(
-                header,
-                sizeBox,
+// LEFT COLUMN
+        VBox leftColumn = new VBox(10);
+        leftColumn.getChildren().addAll(
                 new Label("Choose bread:"), breadBox,
                 new Label("Choose meat:"), meatBox,
-                new Label("Choose cheese:"), cheeseBox,
+                new Label("Choose cheese:"), cheeseBox
+        );
+
+        // RIGHT COLUMN
+        VBox rightColumn = new VBox(10);
+        rightColumn.getChildren().addAll(
                 new Label("Choose toppings:"), toppingBox,
                 new Label("Choose sides:"), sidesBox,
                 new Label("Choose sauces:"), sauceBox,
-                new Label("Toasted?"), toastedBox,
+                new Label("Toasted?"), toastedBox
+        );
+
+       // COMBINE BOTH COLUMNS IN AN HBOX
+        HBox formColumns = new HBox(100);
+        formColumns.getChildren().addAll(leftColumn, rightColumn);
+        HBox.setMargin(leftColumn, new Insets(0, 100, 0, 0));
+        HBox.setMargin(rightColumn, new Insets(0, 0, 0, 100));
+
+       // MAIN CONTAINER
+        container.getChildren().addAll(
+                header,
+                sizeBox,
+                formColumns,
                 submitBtn
         );
+
     }
 
     public void updateCheckoutButton(Button checkoutBtn, Order order) {
