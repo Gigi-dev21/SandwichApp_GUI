@@ -18,7 +18,7 @@ import org.example.sanwichapp_gui.Components.CheckOut.Checkout;
 import org.example.sanwichapp_gui.Components.ChipsUI;
 import org.example.sanwichapp_gui.Components.DrinkUI;
 import org.example.sanwichapp_gui.Components.SandwichUI;
-//import org.example.sanwichapp_gui.Components.SignatureSandwich.SignatureSandwichUI;
+
 import org.example.sanwichapp_gui.StageManager;
 
 
@@ -91,21 +91,7 @@ public class HomePage {
             customizerContainer.setManaged(true);
         });
 
-//        signatureBtn.setOnAction(e -> {
-//
-//            customizerContainer.getChildren().clear();
-//
-//
-//            // Create and show signature sandwich selection screen
-//            SignatureSandwichUI selectionUI = new SignatureSandwichUI( );
-//            Node selectionNode = selectionUI.getUI(); // Custom method to return built Node/Pane
-//
-//            customizerContainer.getChildren().add(selectionNode);
-//            customizerContainer.setVisible(true);
-//            customizerContainer.setManaged(true);
-//
-//
-//        });
+
 
 
         checkoutBtn.setOnAction(e -> {

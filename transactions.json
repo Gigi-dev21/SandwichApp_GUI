@@ -121,4 +121,71 @@
   "totalAmount" : 13.91,
   "paymentMethod" : "Credit Card",
   "timestamp" : 1748546220346
+}, {
+  "customerName" : "1111",
+  "order" : {
+    "customerName" : "1111",
+    "sandwiches" : [ {
+      "name" : "Ham Sandwich",
+      "size" : "8",
+      "bread" : "white",
+      "meat" : "Ham",
+      "cheese" : "american",
+      "toppings" : [ "cucumbers" ],
+      "sauces" : [ "mustard" ],
+      "sides" : [ "au jus" ],
+      "toasted" : false,
+      "quantity" : 1
+    } ],
+    "drinks" : [ {
+      "name" : "Coke",
+      "price" : 2.5,
+      "quantity" : 1,
+      "size" : "Medium",
+      "totalPrice" : 2.5
+    } ],
+    "chips" : [ ],
+    "tax" : 0.07,
+    "empty" : false,
+    "signedIn" : true
+  },
+  "totalAmount" : 13.91,
+  "paymentMethod" : "Credit Card",
+  "timestamp" : 1748548039463
+}, {
+  "customerName" : "Gigi",
+  "order" : {
+    "customerName" : "Gigi",
+    "sandwiches" : [ {
+      "name" : "Ham Sandwich",
+      "size" : "12",
+      "bread" : "white",
+      "meat" : "Ham",
+      "cheese" : "american",
+      "toppings" : [ "cucumbers" ],
+      "sauces" : [ "thousand islands" ],
+      "sides" : [ "au jus" ],
+      "toasted" : false,
+      "quantity" : 1
+    } ],
+    "drinks" : [ {
+      "name" : "Sprite",
+      "price" : 2.5,
+      "quantity" : 1,
+      "size" : "Medium",
+      "totalPrice" : 2.5
+    } ],
+    "chips" : [ {
+      "name" : "doritos",
+      "price" : 1.5,
+      "quantity" : 1,
+      "totalPrice" : 1.5
+    } ],
+    "tax" : 0.07,
+    "empty" : false,
+    "signedIn" : true
+  },
+  "totalAmount" : 18.9925,
+  "paymentMethod" : "Credit Card",
+  "timestamp" : 1748568497092
 } ]

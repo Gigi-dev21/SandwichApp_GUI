@@ -75,4 +75,12 @@ public class SignatureSandwich extends Sandwich {
     public SignatureSandwich cloneSandwich() {
         return new SignatureSandwich(size, bread, meat, cheese, toasted, new ArrayList<>(toppings), new ArrayList<>(sauces));
     }
+
+    public void setToppings(List<String> toppings) {
+        this.toppings = new ArrayList<>(toppings);
+    }
+
+    public void setSauces(List<String> sauces) {
+        this.sauces = new ArrayList<>(sauces);
+    }
 }
